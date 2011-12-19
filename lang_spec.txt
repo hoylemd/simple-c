@@ -17,7 +17,7 @@ input
 $IN  (ex. var << $IN;) <IN>
 
 output
-$OUT (ex. $OUT << var;) <IN>
+$OUT (ex. $OUT << var;) <OUT>
 
 end of line
 ; <ENDL>
@@ -64,6 +64,8 @@ thing :
     ID
     |
     IN
+    |
+    NUM
 
 arithmetic :
     thing arithmetic_operator thing
@@ -73,3 +75,15 @@ arithmetic_operator :
     |
     SUTRACT
     
+token regexes:
+BYTE        "byte"
+ADD         "+"
+SUBTRACT    "-"
+ASSIGN      "<<"
+IN          "$IN"
+OUT         "$OUT"
+ENDL        ";"
+ID          [a-zA-Z0-9_]*
+NUM         [0-9]*
+
+Comments are c-style /*-*/
