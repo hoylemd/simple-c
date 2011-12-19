@@ -1,0 +1,10 @@
+simple-c compiler spec
+
+Must be able to read in a .sc file
+must break up into tokens
+must analyze entire syntax and report all errors
+must output simple c assembly code for simple-c vm, but only if there are no compiler errors
+must be called as the follwing:
+    scc -i <inputname> -o <outputname>
+or
+    <inputstream> scc <outputstream>

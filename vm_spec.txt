@@ -1,0 +1,38 @@
+Simple-c virtual machine specification
+
+must accept a simple-c program as defined below
+must report if invalid file found
+must report run-time errors (if any?)
+must support i/o streaming
+
+simple-c assembly specification:
+
+header:
+<program_name>
+<num_instructions>
+<instruction_list>
+
+format of instructions:
+<instruction> <op1> <op2> <op3> comments
+
+instructions:
+EXIT (0) - terminates the program
+MEMREAD (1) - reads from memory location in <op1> with offset in <op2> and puts the result in <op3>
+MEMWRITE (2) - writes to the memory location in <op1> with offset in <op2> the value in <op3>
+ADD (3) - adds the value in <op1> to the value in <op2> and stores the result in <op3>
+SUBTRACT (4) - subtracts the value in <op1> from the value in <op2> and stores the result in <op3>
+INPUT (5) - reads a byte from input and stores it in <op1>
+OUTPUT (6) - writes a byte from <op1> to the output stream
+
+registers(8):
+4 data registers (0/DATA0, 1/DATA1, 2/DATA2, 3/DATA3)
+1 program counter (4/PC)
+3 misc (5/MISC0, 6/MISC1, 7/MISC2)
+
+calling:
+either :
+    scvm -p <program> (-m <memSize>)
+or
+    <instream> scvm (-m <memSize>)
+
+if -m <memSize> is not specified, memory size is set to 256 bytes.

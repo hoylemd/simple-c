@@ -1,0 +1,75 @@
+Simple-C specificatioin
+
+types:
+
+byte <BYTE>
+
+operators:
+
+arithmetic
++ <ADD>
+- <SUBTRACT>
+
+assignment
+<< <ASSIGN>
+
+input
+$IN  (ex. var << $IN;) <IN>
+
+output
+$OUT (ex. $OUT << var;) <IN>
+
+end of line
+; <ENDL>
+
+
+Grammar :
+
+program :
+    statement_list
+
+statement_list :
+    statement statement_list
+    |
+    statement
+
+statement :
+    something ENDL
+
+something :
+    declaration
+    |
+    assignment
+
+declaration :
+    type ID
+
+type :
+    BYTE
+
+assignment :
+    var ASSIGN expression
+
+var :
+    ID
+    |
+    OUT
+
+expression :
+    arithmetic
+    |
+    thing
+
+thing :
+    ID
+    |
+    IN
+
+arithmetic :
+    thing arithmetic_operator thing
+
+arithmetic_operator :
+    ADD
+    |
+    SUTRACT
+    
