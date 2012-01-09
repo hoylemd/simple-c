@@ -1,0 +1,36 @@
+/* this is the base code that compiles cleanly */
+
+int inc;
+
+int increment(int i)
+{
+	if (i == 0)
+    {
+		return i;
+    }
+	
+	return increment(i - 1);
+}
+
+void main(void){
+	int xi;
+	int yi;
+	int zi;
+	
+	inc = input();
+	
+	xi = input();
+	yi = input();
+	
+	zi = xi * yi;
+	
+	if( zi < 20)
+	{
+		zi = increment(zi);
+		output(20);
+	}
+	
+	output(zi);
+	
+	return;
+}

@@ -1,0 +1,49 @@
+Readme:
+
+This program is a lightweight compiler for the c-minus language, which is a highly miniaturized version of c.
+This program requires make, gcc, flex, and yacc.
+
+
+To Compile:
+type:
+	make
+
+To run
+type:
+	./cm <target source file> <output file> [-a|-s]
+	
+	target source file and output file are required. 
+	-a is optional and will cause the abstract syntax tree to be printed to the specified output file. 
+	-s is also optional and will cause the symbol table to be printed whenever context is moved up a level.
+	
+To clean up
+type
+	make clean
+	
+Included example files:
+
+test files can be found in the cminusCode/ directory. be sure to preface the source file name with the folder name when running.
+
+1.cm:
+compiles cleanly, takes in 3 numbers.  If the last 2 numbers multiplied together they are less than 20, the first will be added to them, and "20" will be printed out.
+the results of those calulations will also be printed out.  This is a simple demonstration of the program only.
+
+2.cm:
+This is the same program as 1.cm, with an undeclared symbol error.
+
+3.cm:
+This is the same program as 1.cm, with a syntax error (missing ;).
+This also demonstrates that the compiler continues trying to compilethe code after an error in order to detect further errors.  This is proven by detection of the syntax error at line 33.
+
+Running the vm.
+
+The vm will be compiled and copied to the main directory from the same make command as the compiler.
+
+to run the vm on a generated code file: run the following command:
+    ./tm <filename>
+
+    filename is the name of the generated code file. it is required.
+
+type "h" when running the VM to list commands.
+
+This vm was developed by Dr. Fei Song from the University of Guelph.
